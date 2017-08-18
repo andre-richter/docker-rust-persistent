@@ -8,7 +8,7 @@ If you use the supplied `run.sh` file, `~/.cargo` and `~/.rustup` are kept in [n
 
 **Tested for Linux hosts only.**
 
-# Usage
+## Usage
 
 1. Build the container image with `make`.
 2. Install an alias for `run.sh` for easy invocation of the container.
@@ -16,6 +16,10 @@ If you use the supplied `run.sh` file, `~/.cargo` and `~/.rustup` are kept in [n
 	2. Nightly: `echo "alias rust-nightly='~/repos/docker-rustup-user/run.sh -c=nightly'" >> ~/.bash_aliases`
 3. Navigate to the folder containing your rust project and start the container from there.
 4. Use the container shell to call `cargo` or `rustc`.
+
+## Demo
+
+![Image of Usage](https://raw.githubusercontent.com/andre-richter/docker-rustup-user/master/demo/docker-rustup-user.gif)
 
 ## License
 
