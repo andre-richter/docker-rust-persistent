@@ -11,7 +11,7 @@ image_name := rust-persistent
 container_user_name := rust
 
 baseimage_stable := rust
-baseimage_nightly := sfackler/rust:nightly
+baseimage_nightly := rustlang/rust:nightly
 
 all: nightly stable
 
