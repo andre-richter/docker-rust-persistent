@@ -18,9 +18,6 @@ MAINTAINER Andre Richter <andre.o.richter@gmail.com>
 ARG IMAGE_NAME
 ENV IMAGE_NAME=$IMAGE_NAME
 
-ARG USER_NAME
-ENV USER_NAME=$USER_NAME
-
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TERM=xterm-256color
 
@@ -58,17 +55,14 @@ RUN set -ex;                                                                    
 #
 # =============================================================================
 RUN set -ex;                                                            \
-    USER_HOME=/home/$USER_NAME;                                         \
     apt-get update;                                                     \
     apt-get install -q -y --no-install-recommends                       \
         build-essential                                                 \
         sudo                                                            \
         xutils-dev                                                      \
         ;                                                               \
-    mkdir -p $USER_HOME;                                                \
-    cp -R /etc/skel/. $USER_HOME;                                       \
-    apt-get clean -q -y;                                                \
     apt-get autoremove -q -y;                                           \
+    apt-get clean -q -y;                                                \
     rm -rf /var/lib/apt/lists/*
 
 # =============================================================================
@@ -77,7 +71,7 @@ RUN set -ex;                                                            \
 #
 # =============================================================================
 COPY entrypoint.sh /usr/local/bin/
-COPY .bash_aliases /home/$USER_NAME/
+COPY .bash_aliases /etc/skel/
 
 ENTRYPOINT ["bash", "entrypoint.sh"]
 CMD ["/bin/bash"]

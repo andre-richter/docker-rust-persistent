@@ -39,4 +39,11 @@ ARGS="-it --rm                                                            \
       -v $IMAGE_NAME-$(id -u)-$(id -g)-cargo-$IMAGE_ID:/usr/local/cargo   \
       -v $IMAGE_NAME-$(id -u)-$(id -g)-rustup-$IMAGE_ID:/usr/local/rustup"
 
+# Uncomment to specify the username inside the container. Default is
+# "rust".  Do not make it identical with your host username.  This
+# would conflict when mounting a path in your home directory into the
+# container.
+# DOCKER_USER_NAME=rust
+# ARGS="$ARGS -e DOCKER_USER_NAME=$DOCKER_USER_NAME"
+
 docker run $ARGS $IMAGE
