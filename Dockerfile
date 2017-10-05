@@ -60,6 +60,7 @@ RUN set -ex;                                                            \
         build-essential                                                 \
         sudo                                                            \
         xutils-dev                                                      \
+        gdb                                                             \
         ;                                                               \
     apt-get autoremove -q -y;                                           \
     apt-get clean -q -y;                                                \
