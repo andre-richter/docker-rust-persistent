@@ -23,6 +23,9 @@ do
             RUSTUP_CHANNEL="${i#*=}"
 	    shift
 	    ;;
+	-n|--host-network)
+	    CMDLINE_ARGS="$CMDLINE_ARGS --net=host"
+	    ;;
 	*)
 	    ;;
     esac
@@ -37,7 +40,8 @@ ARGS="-it --rm                                                            \
       -v $VOLUME:$VOLUME                                                  \
       -w $VOLUME                                                          \
       -v $IMAGE_NAME-$(id -u)-$(id -g)-cargo-$IMAGE_ID:/usr/local/cargo   \
-      -v $IMAGE_NAME-$(id -u)-$(id -g)-rustup-$IMAGE_ID:/usr/local/rustup"
+      -v $IMAGE_NAME-$(id -u)-$(id -g)-rustup-$IMAGE_ID:/usr/local/rustup \
+      $CMDLINE_ARGS"
 
 # Add security exceptions. Needed by GDB to function properly,
 # e.g. disabling ASLR
