@@ -10,7 +10,7 @@ If you use the supplied `run.sh` file, `$RUSTUP_HOME` and `$CARGO_HOME` are kept
 
 ## Usage
 
-1. Build the container image with `make`.
+1. **Optional** Build the container image with `make`. By default, images will be pulled from [Dockerhub](https://hub.docker.com/r/andrerichter/docker-rust-persistent/).
 2. Install an alias for `run.sh` for easy invocation of the container.
     1. Stable: `echo "alias rust='~/repos/docker-rust-persistent/run.sh'" >> ~/.bash_aliases`
 	2. Nightly: `echo "alias rust-nightly='~/repos/docker-rust-persistent/run.sh -c=nightly'" >> ~/.bash_aliases`
