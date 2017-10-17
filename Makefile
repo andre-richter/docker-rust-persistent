@@ -7,7 +7,7 @@
 #
 # =============================================================================
 prefix := andrerichter/
-image_name := rust-persistent
+image_name := docker-rust-persistent
 
 baseimage_nightly := rustlang/rust:nightly
 
