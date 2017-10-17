@@ -38,8 +38,8 @@ fi
 IMAGE_ID=$(docker inspect --format="{{.Id}}" "$IMAGE" | cut -c 8-19)
 
 ARGS="-it --rm                                                            \
-      -e HOST_USER_GID=$(id -g)                                           \
-      -e HOST_USER_UID=$(id -u)                                           \
+      -e LOCAL_UID=$(id -u)                                               \
+      -e LOCAL_GID=$(id -g)                                               \
       -v $VOLUME:$VOLUME                                                  \
       -w $VOLUME                                                          \
       -v $IMAGE_NAME-$(id -u)-$(id -g)-cargo-$IMAGE_ID:/usr/local/cargo   \
