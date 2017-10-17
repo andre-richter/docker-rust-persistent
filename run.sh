@@ -9,7 +9,7 @@
 # =============================================================================
 PREFIX=andrerichter/
 IMAGE_NAME=rust-persistent
-RUSTUP_CHANNEL=stable
+RUSTUP_CHANNEL=latest
 VOLUME=$PWD
 
 for i in "$@"
