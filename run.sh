@@ -32,6 +32,9 @@ do
 done
 
 IMAGE=$PREFIX$IMAGE_NAME:$RUSTUP_CHANNEL
+if ! docker images | grep "$PREFIX$IMAGE_NAME" | grep "$RUSTUP_CHANNEL" &> /dev/null; then
+    docker pull "$IMAGE"
+fi
 IMAGE_ID=$(docker inspect --format="{{.Id}}" "$IMAGE" | cut -c 8-19)
 
 ARGS="-it --rm                                                            \
