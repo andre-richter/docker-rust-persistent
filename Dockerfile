@@ -9,13 +9,13 @@
 #   Andre Richter, <andre.o.richter@gmail.com>
 #
 # =============================================================================
-ARG RUSTUP_BASEIMAGE=rust
+ARG RUSTUP_BASEIMAGE=rustlang/rust:nightly
 
 FROM $RUSTUP_BASEIMAGE
 
 MAINTAINER Andre Richter <andre.o.richter@gmail.com>
 
-ARG IMAGE_NAME=rust-persistent:stable
+ARG IMAGE_NAME=rust-persistent:nightly
 ENV IMAGE_NAME=$IMAGE_NAME
 
 ARG DEBIAN_FRONTEND=noninteractive
