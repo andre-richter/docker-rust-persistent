@@ -15,7 +15,7 @@ FROM $RUSTUP_BASEIMAGE
 
 MAINTAINER Andre Richter <andre.o.richter@gmail.com>
 
-ARG IMAGE_NAME=docker-rust-persistent:stable
+ARG IMAGE_NAME=rust-persistent:stable
 ENV IMAGE_NAME=$IMAGE_NAME
 
 ARG DEBIAN_FRONTEND=noninteractive

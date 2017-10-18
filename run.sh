@@ -8,7 +8,7 @@
 #
 # =============================================================================
 PREFIX=andrerichter/
-IMAGE_NAME=docker-rust-persistent
+IMAGE_NAME=rust-persistent
 RUSTUP_CHANNEL=latest
 VOLUME=$PWD
 
