@@ -19,7 +19,7 @@ If you use the supplied `run.sh` file, `$RUSTUP_HOME` and `$CARGO_HOME` are kept
 
 ## Demo
 
-![Image of Usage](https://raw.githubusercontent.com/andre-richter/docker-rustup-user/master/demo/docker-rustup-user.gif)
+![Image of Usage](https://raw.githubusercontent.com/andre-richter/docker-rust-persistent/master/demo/docker-rust-persistent.gif)
 
 ## License
 
